@@ -1,0 +1,13 @@
+<% if !@cart.nil? &&  !@cart.empty? %>
+	<% @cart.each do |c| %>
+		<%= c %>
+	<% end %>
+<% end %>
+
+<%= form_tag ({controller: 'products',
+	    action: 'add',
+	    method: 'post'}) do %>
+
+	  <input name="product">
+	  <input type=submit value='add to cart'>
+<% end %>
